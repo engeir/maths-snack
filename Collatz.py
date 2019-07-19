@@ -37,8 +37,14 @@ for n in range(start, end, 2):
         rec = tall
         # print(rec, n)
 # %%
-plt.figure()
-plt.scatter(n_list, tall_list, s=0.1)
-plt.xlabel('Input number')
-plt.ylabel('Number of steps to 1')
+plt.figure().set_facecolor('black')
+plt.subplot('111', facecolor='black').tick_params(axis='x', colors='white')
+plt.subplot('111', facecolor='black').tick_params(axis='y', colors='white')
+plt.subplot('111', facecolor='black').spines['top'].set_color('white')
+plt.subplot('111', facecolor='black').spines['bottom'].set_color('white')
+plt.subplot('111', facecolor='black').spines['left'].set_color('white')
+plt.subplot('111', facecolor='black').spines['right'].set_color('white')
+plt.scatter(n_list, tall_list, s=0.1, color='magenta')
+plt.xlabel('Input number', color='white')
+plt.ylabel('Number of steps to 1', color='white')
 plt.show()
