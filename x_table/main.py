@@ -25,8 +25,10 @@ class Sim:
         self.text = Text()
         while 1:
             try:
-                self.version = str(input('Type "ctrl" for full control over the animation, or "auto" to make it run on its own. '))
-                if self.version != 'ctrl' and self.version != 'auto':
+                self.version = str(input(
+                    'Type "ctrl" for full control over the animation, "auto" to make it run \
+                    on its own or "max_auto" to make it run on its own with max number of points. '))
+                if self.version not in ('ctrl', 'auto', 'max_auto'):
                     raise Exception
             except Exception:
                 print('You need to type in either "ctrl" or "auto".')
@@ -64,6 +66,12 @@ class Sim:
         self.factor += 0.01
         self.count += 1
         self.text.type(self.screen, self.factor, self.num)
+
+    def auto_max(self):
+        self.num = 200
+        self.table.draw(self.screen, - self.factor, self.num)
+        self.text.type(self.screen, self.factor, self.num)
+        self.factor += 0.02
 
     def game_loop(self):
         """The main loop that runs the simulation."""
