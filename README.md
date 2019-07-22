@@ -6,7 +6,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 ------------
 :file_folder:
 * [Times Table](x_table)
-* [Blocks colliding PI times](pygame)
+* [Blocks colliding $\pi$ times](pygame)
 
 :memo:
 * [Ant](ant.py)
