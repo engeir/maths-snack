@@ -6,8 +6,8 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 ------------
 :file_folder:
 * [Times Table](x_table)
-* [Blocks colliding :memo: times](pygame)
-$$ \sum_{\forall i}{x_i^{2}} $$
+* [Blocks colliding PI times](pygame)
+
 :memo:
 * [Ant](ant.py)
 * [The Barnsley Fern](barnsley_fern.py)
