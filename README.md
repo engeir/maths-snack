@@ -4,7 +4,11 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 
 ### Overview
 ------------
+:file_folder:
+* [Times Table](x_table)
+* [Blocks colliding PI times](pygame)
 
+:memo:
 * [Ant](ant.py)
 * [The Barnsley Fern](barnsley_fern.py)
 * [The Collatz conjecture](Collatz.py)
