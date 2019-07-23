@@ -24,9 +24,9 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [The Quicksort algorithm](quicksort.py)
 * [van Eck](van_eck.py)
 
-$pi$
+\(pi\)
 
-$\pi$
+\( \pi \)
 
 $$ pi $$
 
