@@ -18,16 +18,33 @@ class Text:
     : param size: text size
     """
 
-    def text_objects(self, msg, font, color):
+    def __init__(self, text, pos_x, pos_y, left=False):
+        self.text = text
+        self.left = left
+        self.pos_x, self.pos_y = pos_x, pos_y
+        self.l = self.r = 0
+        self.t = self.b = 0
+
+    @staticmethod
+    def text_objects(msg, font, color):
         text_surface = font.render(msg, True, color)
         return text_surface, text_surface.get_rect()
 
     def message_display(self, screen, msg, color, posx, posy, size):
         text = pg.font.Font('Ovo-Regular.ttf', size)
         TextSurf, TextRect = self.text_objects(msg, text, color)
-        TextRect.topleft = (posx, posy)
+        if self.left:
+            TextRect.midleft = (posx, posy)
+        else:
+            TextRect.center = (posx, posy)
+        self.l, self.r = TextRect.left, TextRect.right
+        self.t, self.b = TextRect.top, TextRect.bottom
         screen.blit(TextSurf, TextRect)
 
-    def type(self, screen, factor, points):
-        self.message_display(screen, f'Factor: {round(factor, 2)}', cf.WHITE, 20, 20, 40)
-        self.message_display(screen, f'Points: {int(points)}', cf.WHITE, 20, 60, 40)
+    def type(self, screen, color, text=None):  # , factor, points):
+        if text is None:
+            self.message_display(screen, self.text, color, self.pos_x, self.pos_y, 60)
+        else:
+            self.message_display(screen, text, color, self.pos_x, self.pos_y, 60)
+        # self.message_display(screen, f'Factor: {round(factor, 2)}', cf.WHITE, 20, 20, 40)
+        # self.message_display(screen, f'Points: {int(points)}', cf.WHITE, 20, 60, 40)
