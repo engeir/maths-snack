@@ -16,6 +16,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [The Collatz conjecture](Collatz.py)
 * [Continued fraction](continued_frac.py)
 * [The Double Pendulum](double_pend.py)
+* [Fly Straight](fly_straight.py) - Number series from [OEIS](https://oeis.org/A133058)
 * [Gaussian Elimination](gauss_elim.py)
 * [Golden Ratio generator](golden.py)
 * [Graham Scan](graham_scan.py)---a gift wrapping tool
