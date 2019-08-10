@@ -23,6 +23,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Conway's Game of Life](life.py)
 * [The Mandelbrot Set](mandelbrot.py)
 * [Monte Carlo approximation](monte_carlo.py)
+* [Parallelogram](parallelogram.py) - Number series from [OEIS](https://oeis.org/A265326)
 * [Pyramidal numbers](pyramidal_number.py)---making pyramids and polygons of cannon balls
 * [The Quicksort algorithm](quicksort.py)
 * [van Eck](van_eck.py)
