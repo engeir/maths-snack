@@ -19,11 +19,11 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Fly Straight](fly_straight.py) - Number series from [OEIS](https://oeis.org/A133058)
 * [Gaussian Elimination](gauss_elim.py)
 * [Golden Ratio generator](golden.py)
-* [Graham Scan](graham_scan.py)---a gift wrapping tool
+* [Graham Scan](graham_scan.py) - A gift wrapping tool
 * [Conway's Game of Life](life.py)
 * [The Mandelbrot Set](mandelbrot.py)
 * [Monte Carlo approximation](monte_carlo.py)
 * [Parallelogram](parallelogram.py) - Number series from [OEIS](https://oeis.org/A265326)
-* [Pyramidal numbers](pyramidal_number.py)---making pyramids and polygons of cannon balls
+* [Pyramidal numbers](pyramidal_number.py) - Making pyramids and polygons of cannon balls
 * [The Quicksort algorithm](quicksort.py)
 * [van Eck](van_eck.py)
