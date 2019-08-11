@@ -20,6 +20,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Gaussian Elimination](gauss_elim.py)
 * [Golden Ratio generator](golden.py)
 * [Graham Scan](graham_scan.py) - A gift wrapping tool
+* [Chaos in population growth](growth.py)
 * [Conway's Game of Life](life.py)
 * [The Mandelbrot Set](mandelbrot.py)
 * [Monte Carlo approximation](monte_carlo.py)
