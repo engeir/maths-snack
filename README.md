@@ -30,4 +30,4 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Pyramidal numbers](pyramidal_number.py) - Making pyramids and polygons of cannon balls
 * [The Quicksort algorithm](quicksort.py)
 * [Snowy Alps](snowy.py) - Number series from [OEIS](https://oeis.org/A279125)
-* [van Eck](van_eck.py)
+* [van Eck](van_eck.py) - Number series from [OEIS](https://oeis.org/A181391)
