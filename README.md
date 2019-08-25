@@ -13,6 +13,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 :memo:
 * [Ant](ant.py)
 * [The Barnsley Fern](barnsley_fern.py)
+* [Chaotic Ribbon](chaotic_ribbon.py) - Series from [OEIS](https://oeis.org/A055748)
 * [The Collatz conjecture](collatz.py)
 * [Continued fraction](continued_frac.py)
 * [The Double Pendulum](double_pend.py)
@@ -27,5 +28,5 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Parallelogram](parallelogram.py) - Number series from [OEIS](https://oeis.org/A265326)
 * [Pyramidal numbers](pyramidal_number.py) - Making pyramids and polygons of cannon balls
 * [The Quicksort algorithm](quicksort.py)
-* [Snowy Alps](snowy.py) - Number series from [OIES](https://oeis.org/A279125)
+* [Snowy Alps](snowy.py) - Number series from [OEIS](https://oeis.org/A279125)
 * [van Eck](van_eck.py)
