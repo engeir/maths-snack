@@ -13,10 +13,11 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 :memo:
 * [Ant](ant.py)
 * [The Barnsley Fern](barnsley_fern.py)
-* [Chaotic Ribbon](chaotic_ribbon.py) - Series from [OEIS](https://oeis.org/A055748)
+* [Chaotic Ribbon](chaotic_ribbon.py) - Number series from [OEIS](https://oeis.org/A055748)
 * [The Collatz conjecture](collatz.py)
 * [Continued fraction](continued_frac.py)
 * [The Double Pendulum](double_pend.py)
+* [Forest Fire](fire.py) - Number series from [OEIS](https://oeis.org/A229037)
 * [Fly Straight](fly_straight.py) - Number series from [OEIS](https://oeis.org/A133058)
 * [Gaussian Elimination](gauss_elim.py)
 * [Golden Ratio generator](golden.py)
