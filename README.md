@@ -13,7 +13,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 :memo:
 * [Ant](ant.py)
 * [The Barnsley Fern](barnsley_fern.py)
-* [The Collatz conjecture](Collatz.py)
+* [The Collatz conjecture](collatz.py)
 * [Continued fraction](continued_frac.py)
 * [The Double Pendulum](double_pend.py)
 * [Fly Straight](fly_straight.py) - Number series from [OEIS](https://oeis.org/A133058)
