@@ -1,3 +1,11 @@
+"""Implementation of the series A279125 from OEIS.
+
+The entry a(n) is decided by checking if n's binary value has any overlapping
+with previous i=1, 2, 3, ..., n-1, also in binary. I.e., if n's binary value has
+ones in places where any of the i's have ones, a(n) is the lowest integer that
+has not yet been picked, i.e. a(n) > a(i) ∀ i ∈ {1, 2, 3, ..., n-1}.
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -64,7 +72,7 @@ for n in range(3, size):
                         not_filled = False
             numb += 1
 
-# The list is plottet with a black background and white data points to resemble snow
+# The list is plotted with a black background and white data points to resemble snow
 plt.figure().set_facecolor('black')
 plt.subplot('111', facecolor='black').tick_params(axis='x', colors='white')
 plt.subplot('111', facecolor='black').tick_params(axis='y', colors='white')
