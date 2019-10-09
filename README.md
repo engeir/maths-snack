@@ -29,5 +29,6 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Parallelogram](parallelogram.py) - Number series from [OEIS](https://oeis.org/A265326)
 * [Pyramidal numbers](pyramidal_number.py) - Making pyramids and polygons of cannon balls
 * [The Quicksort algorithm](quicksort.py)
+* [Sacks Spiral](sack_spiral.py)
 * [Snowy Alps](snowy.py) - Number series from [OEIS](https://oeis.org/A279125)
 * [van Eck](van_eck.py) - Number series from [OEIS](https://oeis.org/A181391)
