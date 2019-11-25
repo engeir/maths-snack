@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-
+_ = None
 A229037_lst = []  # type: list
 total = 10**4
 
