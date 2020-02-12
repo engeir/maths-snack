@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 import matplotlib.pyplot as plt
 
-# %%
-
 
 def collatz(num):
     count = 0
@@ -20,13 +18,11 @@ def collatz(num):
 # Record below 100 million: 63 728 127
 tall = collatz(63728127)
 print(tall)
-# %%
 rec = 0
 start = 1
 end = start + 1000000
 diff = end - start
 
-# %%
 n_list = []
 tall_list = []
 for n in range(start, end, 2):
@@ -36,7 +32,7 @@ for n in range(start, end, 2):
     if tall > rec:
         rec = tall
         # print(rec, n)
-# %%
+
 plt.figure().set_facecolor('black')
 plt.subplot('111', facecolor='black').tick_params(axis='x', colors='white')
 plt.subplot('111', facecolor='black').tick_params(axis='y', colors='white')
