@@ -12,10 +12,12 @@ def collatz(num, list_out=False):
         if num % 2:
             num = (3 * num + 1) / 2
             count += 1
-            l = np.r_[[1], l]
+            if list_out:
+                l = np.r_[[1], l]
         else:
             num /= 2
-            l = np.r_[[0], l]
+            if list_out:
+                l = np.r_[[0], l]
     if list_out:
         return l
     return count
