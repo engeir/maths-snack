@@ -1,6 +1,7 @@
 {
     "cSpell.ignoreWords": [
         "arange",
+        "asarray",
         "cfunc",
         "chirpz",
         "collatz",
@@ -18,6 +19,7 @@
         "ifft",
         "imag",
         "interp",
+        "itertools",
         "jitted",
         "lolim",
         "neials",
