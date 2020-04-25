@@ -8,7 +8,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Dragon Curve](dragon_curve)
 * [Fractal Tree](fractal_tree)
 * [Times Table](x_table)
-* [Blocks colliding PI times](pygame)
+* [Blocks colliding PI times](pi_count)
 
 :memo:
 * [Ant](ant.py)
