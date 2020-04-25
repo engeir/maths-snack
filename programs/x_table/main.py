@@ -41,7 +41,7 @@ class Sim:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
-                    # pg.image.save(self.screen, 'x_table')
+                    # pg.image.save(self.screen, 'x_table.png')
                     pg.quit()
                     quit()
                 if event.key == pg.K_SPACE:

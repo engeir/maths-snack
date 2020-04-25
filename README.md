@@ -42,21 +42,17 @@ The Barnsley Fern
 
 Chaotic Ribbon
 
-![](lookbook/chaotic_ribbon.pdf)
 ![](lookbook/chaotic_ribbon.png)
 
 Collatz algorithm
-
-![](lookbook/collatz_sea_weed_4.pdf)
+![](lookbook/collatz_sea_weed.png)
 
 Dragon Curve
 
-![](lookbook/dragon_curve)
-![](lookbook/dragon_curve_1)
+![](lookbook/dragon_curve.png)
 
 Fire
 
-![](lookbook/fire.pdf)
 ![](lookbook/fire.png)
 
 Fly Straight
@@ -65,7 +61,8 @@ Fly Straight
 
 Fractal Tree
 
-![](lookbook/fractal_tree)
+![](lookbook/fractal_tree.png)
+![](lookbook/fractal_tree.gif)
 
 Graham Scan
 
@@ -77,23 +74,23 @@ Growth Rate
 
 Parallelogram
 
-![](lookbook/parallelogram.pdf)
+![](lookbook/parallelogram.png)
 
 Count Pi with colliding blocks
 
-![](lookbook/pi_collide_count)
-![](lookbook/pi_collide_count_1)
+![](lookbook/pi_collide_count.png)
+![](lookbook/pi_count.gif)
 
 Sack Spiral
 
-![](lookbook/sack_spiral.pdf)
 ![](lookbook/sack_spiral.png)
 
 Snowy Hills
 
-![](lookbook/snowy_hills.pdf)
+![](lookbook/snowy_hills.png)
 
 X Table
 
-![](lookbook/x_table)
-![](lookbook/x_table_1)
+![](lookbook/x_table.png)
+![](lookbook/x_table_low.gif)
+![](lookbook/x_table.gif)

@@ -42,6 +42,6 @@ for sp in spines:
 COLOR = (0.26, .4, .49)
 a.set_facecolor(COLOR)
 f.patch.set_facecolor(COLOR)
-# plt.savefig('pdffig', bbox_inches='tight', format='pdf', dpi=600)
+# plt.savefig('collatz_sea_weed.png', bbox_inches='tight', format='png', dpi=600)
 # pdffig.close()
 plt.show()

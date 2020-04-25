@@ -80,7 +80,7 @@ plt.subplot('111', facecolor='black').spines['top'].set_color('white')
 plt.subplot('111', facecolor='black').spines['bottom'].set_color('white')
 plt.subplot('111', facecolor='black').spines['left'].set_color('white')
 plt.subplot('111', facecolor='black').spines['right'].set_color('white')
-plt.scatter(list(range(len(A279125))), A279125, s=.01, color='white', marker=',')
+plt.scatter(list(range(len(A279125))), A279125, s=.1, color='white', marker=',')
 
 # Remove labels, axes etc.
 spines = ["top", "right", "left", "bottom"]
@@ -93,5 +93,5 @@ plt.tick_params(axis='x', which='both', bottom=False,
 plt.gca().set_xticklabels([])
 plt.gca().set_yticklabels([])
 
-# plt.savefig('snowy_hills.pdf', bbox_inches='tight', format='pdf', dpi=600)
+# plt.savefig('snowy_hills.png', bbox_inches='tight', format='png', dpi=600)
 plt.show()

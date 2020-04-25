@@ -49,5 +49,5 @@ plt.tick_params(axis='x', which='both', bottom=False,
 plt.gca().set_xticklabels([])
 plt.gca().set_yticklabels([])
 
-# plt.savefig('parallelogram.pdf', bbox_inches='tight', format='pdf', dpi=600)
+# plt.savefig('parallelogram.png', bbox_inches='tight', format='png', dpi=600)
 plt.show()

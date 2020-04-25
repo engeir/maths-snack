@@ -42,7 +42,7 @@ class TheGame:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
-                    # pg.image.save(self.screen, 'pi_collide_count')
+                    # pg.image.save(self.screen, 'pi_collide_count.png')
                     pg.quit()
                     quit()
                 if event.key == pg.K_SPACE:
