@@ -9,8 +9,9 @@ class Sim:
 
     def __init__(self):
         pg.init()
-        a = pg.display.list_modes()
-        self.screen = pg.display.set_mode(a[0], pg.FULLSCREEN)
+        # a = pg.display.list_modes()
+        self.screen = pg.display.set_mode((0, 0))
+        # self.screen = pg.display.set_mode(a[0], pg.FULLSCREEN)
         pg.display.set_caption("Times Table")
         self.clock = pg.time.Clock()
         self.write()
@@ -106,14 +107,22 @@ class Sim:
             self.text_press_n.type(self.screen, cf.WHITE)
 
     def write(self):
-        self.text_version = Text(f'What version do you want?', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 - 600)
-        self.text_ctrl = Text(f'Full control', cf.SCREEN_WIDTH / 2 - 900, cf.SCREEN_HEIGHT / 2 - 500, left=True)
-        self.text_auto = Text(f'Auto (increasing number of points)', cf.SCREEN_WIDTH / 2 - 900, cf.SCREEN_HEIGHT / 2 - 400, left=True)
-        self.text_max_auto = Text(f'Auto (constant number of points)', cf.SCREEN_WIDTH / 2 - 900, cf.SCREEN_HEIGHT / 2 - 300, left=True)
-        self.text_max_factor = Text(f'Set the max factor value.', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 - 100)
-        self.text_press_n = Text(f'Press "n".', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 + 400)
-        self.text_factor = Text('', 100, 100, left=True)
-        self.text_points = Text('', 100, 200, left=True)
+        self.text_version = Text(f'What version do you want?', cf.SCREEN_WIDTH / 2,
+                                 cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .4)
+        self.text_auto = Text(f'Auto (increasing number of points)', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .4,
+                              cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .25, left=True)
+        self.text_max_auto = Text(f'Auto (constant number of points)', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .4,
+                                  cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .15, left=True)
+        self.text_ctrl = Text(f'Full control', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .4,
+                              cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .05, left=True)
+        self.text_max_factor = Text(f'Set the max factor value.', cf.SCREEN_WIDTH / 2,
+                                    cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .1)
+        self.text_press_n = Text(f'Press "n".', cf.SCREEN_WIDTH / 2,
+                                 cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .2)
+        self.text_factor = Text('', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .45,
+                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .4, left=True)
+        self.text_points = Text('', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .45,
+                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .32, left=True)
 
     def mouse_pos(self):
         self.x, self.y = pg.mouse.get_pos()
