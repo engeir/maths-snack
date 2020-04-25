@@ -76,6 +76,7 @@ class Sim:
                 if event.key == pg.K_r:
                     self.setup()
                 if event.key == pg.K_ESCAPE:
+                    # pg.image.save(self.screen, 'barnsley_fern.png')
                     pg.quit()
                     quit()
             if event.type == pg.QUIT:

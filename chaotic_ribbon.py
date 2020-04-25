@@ -14,5 +14,18 @@ for i in range(3, size):
 A055748.pop(0)
 
 plt.figure()
-plt.plot(A055748, 'o', MarkerSize=1)
+plt.plot(A055748, 'o', MarkerSize=1, color=(.7, .2, .2))
+
+# Remove labels, axes etc.
+spines = ["top", "right", "left", "bottom"]
+for sp in spines:
+    plt.gca().spines[sp].set_visible(False)
+plt.tick_params(axis='y', which='both', left=False,
+                right=False, labelleft=False)
+plt.tick_params(axis='x', which='both', bottom=False,
+                top=False, labelbottom=False)
+plt.gca().set_xticklabels([])
+plt.gca().set_yticklabels([])
+
+# plt.savefig('chaotic_ribbon.pdf', bbox_inches='tight', format='pdf', dpi=600)
 plt.show()

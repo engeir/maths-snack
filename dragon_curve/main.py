@@ -102,6 +102,7 @@ class Sim:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
+                    # pg.image.save(self.screen, 'dragon_curve')
                     pg.quit()
                     quit()
                 if event.key == pg.K_SPACE:

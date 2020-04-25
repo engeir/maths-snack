@@ -1,3 +1,7 @@
+"""Look at the structures in the plot. Closely.
+Then you might see some chapels emerging.
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -12,5 +16,17 @@ def triangle(n):
 
 A002260 = triangle(1000)
 plt.figure()
-plt.plot(A002260, 'o', MarkerSize=0.1)
+plt.plot(A002260, 'o', MarkerSize=0.1, marker=',')
+
+# Remove labels, axes etc.
+spines = ["top", "right", "left", "bottom"]
+for sp in spines:
+    plt.gca().spines[sp].set_visible(False)
+plt.tick_params(axis='y', which='both', left=False,
+                right=False, labelleft=False)
+plt.tick_params(axis='x', which='both', bottom=False,
+                top=False, labelbottom=False)
+plt.gca().set_xticklabels([])
+plt.gca().set_yticklabels([])
+
 plt.show()

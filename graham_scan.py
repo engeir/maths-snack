@@ -30,6 +30,7 @@ class Sim:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
+                    # pg.image.save(self.screen, 'graham_scan.png')
                     pg.quit()
                     quit()
                 if event.key == pg.K_SPACE:
@@ -55,12 +56,12 @@ class Sim:
         start = min(gift, key=lambda p: (p[1], p[0]))  # Must be in hull
         gift.remove(start)
 
-        s = sorted(gift, key=lambda point: polar_angle(start, point))
+        s = sorted(gift, key=lambda point: self.polar_angle(start, point))
         hull = [start, s[0], s[1]]
 
         # Remove points from hull that make the hull concave
         for pt in s[2:]:
-            while not counter_clockwise(hull[-2], hull[-1], pt):
+            while not self.counter_clockwise(hull[-2], hull[-1], pt):
                 del hull[-1]
             hull.append(pt)
 
@@ -72,13 +73,13 @@ class Sim:
         #              (7, -7), (-2, -9), (6, -5), (0, 14), (2, 8)]
         test_gift = [(randint(50, SCREEN_WIDTH - 50),
                       randint(50, SCREEN_HEIGHT - 50)) for _ in range(500)]
-        hull = graham_scan(test_gift)
+        hull = self.graham_scan(test_gift)
 
         for x, y in test_gift:
             pg.draw.circle(self.screen, WHITE, (x, y), 4, 0)
 
         pg.draw.polygon(self.screen, GREEN, hull, 1)
-        
+
         print("The points in the hull are:")
         for point in hull:
             print(point)

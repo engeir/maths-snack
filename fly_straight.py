@@ -56,4 +56,18 @@ def update(frame):
 
 ani = FuncAnimation(fig, update, frames=data, interval=10,
                     init_func=init, blit=True)
+
+# Remove labels, axes etc.
+spines = ["top", "right", "left", "bottom"]
+for sp in spines:
+    plt.gca().spines[sp].set_visible(False)
+plt.tick_params(axis='y', which='both', left=False,
+                right=False, labelleft=False)
+plt.tick_params(axis='x', which='both', bottom=False,
+                top=False, labelbottom=False)
+plt.gca().set_xticklabels([])
+plt.gca().set_yticklabels([])
+
+# ani.save('fly_straith.gif', writer='imagemagick', fps=60)
+
 plt.show()
