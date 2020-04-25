@@ -7,7 +7,7 @@ class Tree:
     """Make a times table calculation."""
 
     def __init__(self):
-        self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - 100)]
+        self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - cf.SCREEN_HEIGHT * .1)]
         self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - (cf.LENGTH + 100))]
         self.scale = 1
         self.twist_div = 10
