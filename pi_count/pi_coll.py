@@ -32,6 +32,7 @@ class TheGame:
     def setup(self):
         """When pressing 'r' this default setup is initiated.
         """
+        self.count = 0
         self.small = Block(350, 1, 60, 0)
         self.big = Block(800, 100**5, 150, 10 / TIME_STEP)
 
@@ -41,6 +42,7 @@ class TheGame:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
+                    # pg.image.save(self.screen, 'pi_collide_count')
                     pg.quit()
                     quit()
                 if event.key == pg.K_SPACE:
