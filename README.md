@@ -37,49 +37,63 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 ### Examples
 ------------
 The Barnsley Fern
+
 ![](lookbook/barnsley_fern.png)
 
 Chaotic Ribbon
+
 ![](lookbook/chaotic_ribbon.pdf)
 ![](lookbook/chaotic_ribbon.png)
 
 Collatz algorithm
+
 ![](lookbook/collatz_sea_weed_4.pdf)
 
 Dragon Curve
+
 ![](lookbook/dragon_curve)
 ![](lookbook/dragon_curve_1)
 
 Fire
+
 ![](lookbook/fire.pdf)
 ![](lookbook/fire.png)
 
 Fly Straight
+
 ![](lookbook/fly_straight.gif)
 
 Fractal Tree
+
 ![](lookbook/fractal_tree)
 
 Graham Scan
+
 ![](lookbook/graham_scan.png)
 
 Growth Rate
+
 ![](lookbook/growth.gif)
 
 Parallelogram
+
 ![](lookbook/parallelogram.pdf)
 
 Count Pi with colliding blocks
+
 ![](lookbook/pi_collide_count)
 ![](lookbook/pi_collide_count_1)
 
 Sack Spiral
+
 ![](lookbook/sack_spiral.pdf)
 ![](lookbook/sack_spiral.png)
 
 Snowy Hills
+
 ![](lookbook/snowy_hills.pdf)
 
 X Table
+
 ![](lookbook/x_table)
 ![](lookbook/x_table_1)
