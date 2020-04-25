@@ -34,11 +34,6 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [van Eck](scripts/van_eck.py) - Number series from [OEIS](https://oeis.org/A181391)
 
 
-<object data="lookbook/chaotic_ribbon.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="lookbook/chaotic_ribbon.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="lookbook/chaotic_ribbon.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
 ### Examples
 ------------
 The Barnsley Fern
