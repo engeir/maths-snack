@@ -4,8 +4,10 @@ import pygame as pg
 
 # Display
 pg.display.init()
-a = pg.display.list_modes()
-SCREEN_WIDTH, SCREEN_HEIGHT = a[0][0], a[0][1]
+# a = pg.display.list_modes()
+# SCREEN_WIDTH, SCREEN_HEIGHT = a[0][0], a[0][1]
+a = pg.display.set_mode((0, 0))
+SCREEN_WIDTH, SCREEN_HEIGHT = a.get_clip()[2], a.get_clip()[3]
 FPS = 30
 
 # Colors
@@ -21,9 +23,11 @@ SCALING = 0.07
 TWIST = 1
 LENGTH = 10
 
+x_0, y_0 = int(SCREEN_WIDTH / 2), int(SCREEN_HEIGHT / 2)
+
 START = [
-    [900, 900, 351, 350],
-    [1848, 1850, 1250, 1250],
-    [700, 705, 720, 720],
-    [760, 760, 605, 645]
+    [x_0, x_0, y_0, y_0 - 1],
+    [x_0, x_0 + 2, y_0, y_0],
+    [x_0 - 5, x_0, y_0, y_0],
+    [x_0, x_0, y_0 - 40, y_0]
 ]

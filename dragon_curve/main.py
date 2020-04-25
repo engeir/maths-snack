@@ -11,8 +11,9 @@ class Sim:
 
     def __init__(self):
         pg.init()
-        a = pg.display.list_modes()
-        self.screen = pg.display.set_mode(a[0], pg.FULLSCREEN)
+        # a = pg.display.list_modes()
+        # self.screen = pg.display.set_mode(a[0], pg.FULLSCREEN)
+        self.screen = pg.display.set_mode((0, 0))
         pg.display.set_caption("Dragon Curve")
         self.clock = pg.time.Clock()
         self.write()
@@ -145,27 +146,26 @@ class Sim:
                             self.dragon_size = 4
 
     def write(self):
-        self.text_esc_r = Text('If in doubt, press "r". Press "esc" to quit.', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 + 400)
-        self.text_press_n = Text(
-            'Press "n".', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)
-        self.text_press_n_a_lot = Text(
-            'Press "n". Repeatedley.', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)
-        self.text_a_or_m = Text('Automatic or Manual Simulation?',
-                                cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 - 400)
-        self.text_auto = Text('Automatic', cf.SCREEN_WIDTH /
-                              2 - 300, cf.SCREEN_HEIGHT / 2 - 200)
-        self.text_manual = Text(
-            'Manual', cf.SCREEN_WIDTH / 2 + 300, cf.SCREEN_HEIGHT / 2 - 200)
-        self.text_dragon_size = Text(
-            'Choose the length of the lines in your Dragon.', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)
-        self.text_2 = Text('2', cf.SCREEN_WIDTH / 2 - 300,
-                           cf.SCREEN_HEIGHT / 2 + 200)
-        self.text_3 = Text('3', cf.SCREEN_WIDTH / 2 - 100,
-                           cf.SCREEN_HEIGHT / 2 + 200)
-        self.text_5 = Text('5', cf.SCREEN_WIDTH / 2 + 100,
-                           cf.SCREEN_HEIGHT / 2 + 200)
-        self.text_40 = Text('40', cf.SCREEN_WIDTH / 2 +
-                            300, cf.SCREEN_HEIGHT / 2 + 200)
+        self.text_esc_r = Text('If in doubt, press "r". Press "esc" to quit.', cf.SCREEN_WIDTH / 2,
+                               cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .3)
+        self.text_press_n = Text('Press "n".', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)
+        self.text_press_n_a_lot = Text('Press "n". Repeatedly.', cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)
+        self.text_a_or_m = Text('Automatic or Manual Simulation?', cf.SCREEN_WIDTH / 2,
+                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .35)
+        self.text_auto = Text('Automatic', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .2,
+                              cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .2)
+        self.text_manual = Text('Manual', cf.SCREEN_WIDTH / 2 + cf.SCREEN_WIDTH * .2,
+                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .2)
+        self.text_dragon_size = Text('Choose the length of the lines in your Dragon.', cf.SCREEN_WIDTH / 2,
+                                     cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .05)
+        self.text_2 = Text('2', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .2,
+                           cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .1)
+        self.text_3 = Text('3', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .07,
+                           cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .1)
+        self.text_5 = Text('5', cf.SCREEN_WIDTH / 2 + cf.SCREEN_WIDTH * .07,
+                           cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .1)
+        self.text_40 = Text('40', cf.SCREEN_WIDTH / 2 + cf.SCREEN_WIDTH * .2,
+                            cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .1)
 
     def mouse_pos(self):
         self.x, self.y = pg.mouse.get_pos()
