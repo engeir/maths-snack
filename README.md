@@ -36,47 +36,47 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 
 ### Examples
 ------------
-The Barnsley Fern
+#### [The Barnsley Fern](scripts/barnsley_fern.py)
 ![](lookbook/barnsley_fern.png)
 
-Chaotic Ribbon
+#### [Chaotic Ribbon](scripts/chaotic_ribbon.py)
 ![](lookbook/chaotic_ribbon.png)
 
-Collatz algorithm
+#### [Collatz algorithm](scripts/collatz_test.py)
 ![](lookbook/collatz_sea_weed.png)
 
-Dragon Curve
+#### [Dragon Curve](programs/dragon_curve)
 ![](lookbook/dragon_curve.png)
 
-Fire
+#### [Forest Fire](scripts/fire.py)
 ![](lookbook/fire.png)
 
-Fly Straight
+#### [Fly Straight](scripts/fly_straight.py)
 ![](lookbook/fly_straight.gif)
 
-Fractal Tree
+#### [Fractal Tree](programs/fractal_tree)
 ![](lookbook/fractal_tree.png)
 ![](lookbook/fractal_tree.gif)
 
-Graham Scan
+#### [Graham Scan](scripts/graham_scan.py)
 ![](lookbook/graham_scan.png)
 
-Growth Rate
+#### [Chaos in population growth](scripts/growth.py)
 ![](lookbook/growth.gif)
 
-Parallelogram
+#### [Parallelogram](scripts/parallelogram.py)
 ![](lookbook/parallelogram.png)
 
-Count Pi with colliding blocks
+#### [Count Pi with colliding blocks](programs/pi_count)
 ![](lookbook/pi_collide_count.png)
 ![](lookbook/pi_count.gif)
 
-Sack Spiral
+#### [Sacks Spiral](scripts/sack_spiral.py)
 ![](lookbook/sack_spiral.png)
 
-Snowy Hills
+#### [Snowy Alps](scripts/snowy.py)
 ![](lookbook/snowy_hills.png)
 
-X Table
+#### [Times Table](programs/x_table)
 ![](lookbook/x_table.png)
 ![](lookbook/x_table_low.gif)
