@@ -93,4 +93,3 @@ X Table
 
 ![](lookbook/x_table.png)
 ![](lookbook/x_table_low.gif)
-![](lookbook/x_table.gif)
