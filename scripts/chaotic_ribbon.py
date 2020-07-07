@@ -27,5 +27,5 @@ plt.tick_params(axis='x', which='both', bottom=False,
 plt.gca().set_xticklabels([])
 plt.gca().set_yticklabels([])
 
-# plt.savefig('chaotic_ribbon.pdf', bbox_inches='tight', format='pdf', dpi=600)
+# plt.savefig('chaotic_ribbon.png', bbox_inches='tight', format='png', dpi=600, transparent=True)
 plt.show()
