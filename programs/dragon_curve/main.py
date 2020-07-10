@@ -1,9 +1,10 @@
-# import os
+import sys
 import pygame as pg
 import numpy as np
 import config as cf
 from dragon import Dragon
-from text import Text
+sys.path.append('../utils')
+from texts import Text
 
 
 class Sim:
@@ -35,11 +36,11 @@ class Sim:
         self.text_a_or_m.type(self.screen, cf.WHITE)
         self.text_esc_r.type(self.screen, cf.WHITE)
         if self.auto is None:
-            if self.text_auto.l < self.x and self.x < self.text_auto.r and self.text_auto.t < self.y and self.y < self.text_auto.b:
+            if self.text_auto.overlay(self.x, self.y):
                 self.text_auto.type(self.screen, cf.RED)
             else:
                 self.text_auto.type(self.screen, cf.WHITE)
-            if self.text_manual.l < self.x and self.x < self.text_manual.r and self.text_manual.t < self.y and self.y < self.text_manual.b:
+            if self.text_manual.overlay(self.x, self.y):
                 self.text_manual.type(self.screen, cf.RED)
             else:
                 self.text_manual.type(self.screen, cf.WHITE)
@@ -52,19 +53,19 @@ class Sim:
         if self.auto is not None:
             self.text_dragon_size.type(self.screen, cf.WHITE)
         if self.auto is not None and self.dragon_size is None:
-            if self.text_2.l < self.x and self.x < self.text_2.r and self.text_2.t < self.y and self.y < self.text_2.b:
+            if self.text_2.overlay(self.x, self.y):
                 self.text_2.type(self.screen, cf.RED)
             else:
                 self.text_2.type(self.screen, cf.WHITE)
-            if self.text_3.l < self.x and self.x < self.text_3.r and self.text_3.t < self.y and self.y < self.text_3.b:
+            if self.text_3.overlay(self.x, self.y):
                 self.text_3.type(self.screen, cf.RED)
             else:
                 self.text_3.type(self.screen, cf.WHITE)
-            if self.text_5.l < self.x and self.x < self.text_5.r and self.text_5.t < self.y and self.y < self.text_5.b:
+            if self.text_5.overlay(self.x, self.y):
                 self.text_5.type(self.screen, cf.RED)
             else:
                 self.text_5.type(self.screen, cf.WHITE)
-            if self.text_40.l < self.x and self.x < self.text_40.r and self.text_40.t < self.y and self.y < self.text_40.b:
+            if self.text_40.overlay(self.x, self.y):
                 self.text_40.type(self.screen, cf.RED)
             else:
                 self.text_40.type(self.screen, cf.WHITE)

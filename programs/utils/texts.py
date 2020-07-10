@@ -1,5 +1,4 @@
 import pygame as pg
-import config as cf
 
 
 class Text:
@@ -18,9 +17,9 @@ class Text:
     : param size: text size
     """
 
-    def __init__(self, text, pos_x, pos_y, left=False):
+    def __init__(self, text, pos_x, pos_y, loc=False):
         self.text = text
-        self.left = left
+        self.loc = loc
         self.pos_x, self.pos_y = pos_x, pos_y
         self.l = self.r = 0
         self.t = self.b = 0
@@ -31,20 +30,31 @@ class Text:
         return text_surface, text_surface.get_rect()
 
     def message_display(self, screen, msg, color, posx, posy, size):
-        text = pg.font.Font('Ovo-Regular.ttf', size)
+        # self.move(msg, color, posx, posy, size)
+        text = pg.font.Font('../utils/Ovo-Regular.ttf', size)
         TextSurf, TextRect = self.text_objects(msg, text, color)
-        if self.left:
+        if self.loc in ['l', 'left']:
             TextRect.midleft = (posx, posy)
+        elif self.loc in ['r', 'right']:
+            TextRect.midright = (posx, posy)
         else:
             TextRect.center = (posx, posy)
         self.l, self.r = TextRect.left, TextRect.right
         self.t, self.b = TextRect.top, TextRect.bottom
         screen.blit(TextSurf, TextRect)
 
-    def type(self, screen, color, text=None):  # , factor, points):
+    def type(self, screen, color, text=None, size=50, fill=False):
+        if fill:
+            screen.fill(fill, self.get_rect())
         if text is None:
-            self.message_display(screen, self.text, color, self.pos_x, self.pos_y, 60)
+            self.message_display(screen, self.text, color,
+                                 self.pos_x, self.pos_y, size)
         else:
-            self.message_display(screen, text, color, self.pos_x, self.pos_y, 60)
-        # self.message_display(screen, f'Factor: {round(factor, 2)}', cf.WHITE, 20, 20, 40)
-        # self.message_display(screen, f'Points: {int(points)}', cf.WHITE, 20, 60, 40)
+            self.message_display(screen, text, color,
+                                 self.pos_x, self.pos_y, size)
+
+    def overlay(self, x, y):
+        return bool(self.l < x < self.r and self.t < y < self.b)
+
+    def get_rect(self):
+        return (self.l, self.t, self.r - self.l, self.b - self.t)

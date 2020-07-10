@@ -1,7 +1,9 @@
+import sys
 import pygame as pg
 import config as cf
-from x_table import TimesTable
-from text import Text
+from x_table_calc import TimesTable
+sys.path.append('../utils')
+from texts import Text
 
 
 class Sim:
@@ -9,9 +11,7 @@ class Sim:
 
     def __init__(self):
         pg.init()
-        # a = pg.display.list_modes()
         self.screen = pg.display.set_mode((0, 0))
-        # self.screen = pg.display.set_mode(a[0], pg.FULLSCREEN)
         pg.display.set_caption("Times Table")
         self.clock = pg.time.Clock()
         self.write()
@@ -19,7 +19,7 @@ class Sim:
         self.mouse_pos()
         self.wait = True
         self.ctrl_max_factor = None
-        # self.num = None
+        self.num = None
         self.setup()
 
     def setup(self):
@@ -32,7 +32,6 @@ class Sim:
         self.factor = 0
         self.adder = 0.01
         self.num = 20
-        # self.table = TimesTable(self.num)
         self.count = 0
 
     def events(self):
@@ -51,7 +50,6 @@ class Sim:
                     self.wait = True
                     self.ctrl_max_factor = None
                     self.num = None
-                    # self.setup()
                 if self.choose_version is not None and self.wait:
                     if event.key == pg.K_n:
                         self.wait = False
@@ -60,24 +58,24 @@ class Sim:
                 quit()
             if self.wait:
                 if event.type == pg.MOUSEBUTTONUP:
-                    if self.text_auto.l < self.x and self.x < self.text_auto.r and self.text_auto.t < self.y and self.y < self.text_auto.b:
+                    if self.text_auto.overlay(self.x, self.y):
                         self.choose_version = 'auto'
-                    elif self.text_ctrl.l < self.x and self.x < self.text_ctrl.r and self.text_ctrl.t < self.y and self.y < self.text_ctrl.b:
+                    elif self.text_ctrl.overlay(self.x, self.y):
                         self.choose_version = 'ctrl'
-                    elif self.text_max_auto.l < self.x and self.x < self.text_max_auto.r and self.text_max_auto.t < self.y and self.y < self.text_max_auto.b:
+                    elif self.text_max_auto.overlay(self.x, self.y):
                         self.choose_version = 'max_auto'
 
     def menu(self):
         if self.choose_version is None:
-            if self.text_auto.l < self.x and self.x < self.text_auto.r and self.text_auto.t < self.y and self.y < self.text_auto.b:
+            if self.text_auto.overlay(self.x, self.y):
                 self.text_auto.type(self.screen, cf.RED)
             else:
                 self.text_auto.type(self.screen, cf.WHITE)
-            if self.text_ctrl.l < self.x and self.x < self.text_ctrl.r and self.text_ctrl.t < self.y and self.y < self.text_ctrl.b:
+            if self.text_ctrl.overlay(self.x, self.y):
                 self.text_ctrl.type(self.screen, cf.RED)
             else:
                 self.text_ctrl.type(self.screen, cf.WHITE)
-            if self.text_max_auto.l < self.x and self.x < self.text_max_auto.r and self.text_max_auto.t < self.y and self.y < self.text_max_auto.b:
+            if self.text_max_auto.overlay(self.x, self.y):
                 self.text_max_auto.type(self.screen, cf.RED)
             else:
                 self.text_max_auto.type(self.screen, cf.WHITE)
@@ -95,35 +93,26 @@ class Sim:
             self.text_auto.type(self.screen, cf.WHITE)
             self.text_ctrl.type(self.screen, cf.WHITE)
             self.text_max_auto.type(self.screen, cf.GREEN)
-        # if self.choose_version == 'ctrl' and self.ctrl_max_factor is None:
-        #     self.text_max_factor.type(self.screen, cf.WHITE)
-            # if self.x < cf.SCREEN_WIDTH / 2 - 800
-            # pg.draw.line(self.screen, cf.WHITE, (cf.SCREEN_WIDTH / 2 - 800, cf.SCREEN_HEIGHT / 2 + 100), (self.x, cf.SCREEN_HEIGHT / 2 + 100), 60)
-        # if all([x != None for x in [self.choose_version, self.ctrl_max_factor, self.num]]):  # self.choose_version is not None:
-        #     self.table = TimesTable(20)
-        # if all([x != None for x in [self.choose_version, self.ctrl_max_factor, self.num]]) and self.wait:
         if self.choose_version is not None and self.wait:
-            # pg.draw.line(self.screen, cf.GREEN, (cf.SCREEN_WIDTH / 2 - 800,
-            #                                      cf.SCREEN_HEIGHT / 2 + 100), (self.x, cf.SCREEN_HEIGHT / 2 + 100), 60)
             self.text_press_n.type(self.screen, cf.WHITE)
 
     def write(self):
         self.text_version = Text(f'What version do you want?', cf.SCREEN_WIDTH / 2,
                                  cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .4)
         self.text_auto = Text(f'Auto (increasing number of points)', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .4,
-                              cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .25, left=True)
+                              cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .25, loc='l')
         self.text_max_auto = Text(f'Auto (constant number of points)', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .4,
-                                  cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .15, left=True)
+                                  cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .15, loc='l')
         self.text_ctrl = Text(f'Full control', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .4,
-                              cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .05, left=True)
+                              cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .05, loc='l')
         self.text_max_factor = Text(f'Set the max factor value.', cf.SCREEN_WIDTH / 2,
                                     cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .1)
         self.text_press_n = Text(f'Press "n".', cf.SCREEN_WIDTH / 2,
                                  cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .2)
         self.text_factor = Text('', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .45,
-                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .4, left=True)
+                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .4, loc='l')
         self.text_points = Text('', cf.SCREEN_WIDTH / 2 - cf.SCREEN_WIDTH * .45,
-                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .32, left=True)
+                                cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .32, loc='l')
 
     def mouse_pos(self):
         self.x, self.y = pg.mouse.get_pos()
