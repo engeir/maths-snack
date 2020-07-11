@@ -126,7 +126,7 @@ class Sim:
         self.x, self.y = pg.mouse.get_pos()
 
     def circle_sim(self):
-        if self.choose_version == 'w0':
+        if self.choose_version == 'w0' and self.wheel.w is None:
             self.wheel.f_trans()
         self.table.draw(self.screen, self.wheel.w, self.factor,
                         self.lines, self.choose_version)

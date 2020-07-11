@@ -53,7 +53,7 @@ class Wheel:
         self.x = np.array([])
         self.y = np.array([])
         self.path = np.array([])
-        self.w = np.array([])
+        self.w = None
         self.rad = int(cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .1)
         self.l = cf.SCREEN_WIDTH / 2 - self.rad
         self.r = cf.SCREEN_WIDTH / 2 + self.rad
