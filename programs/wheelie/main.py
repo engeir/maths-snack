@@ -11,7 +11,8 @@ class Sim:
 
     def __init__(self):
         pg.init()
-        self.screen = pg.display.set_mode((0, 0))
+        # self.screen = pg.display.set_mode([cf.SCREEN_WIDTH, cf.SCREEN_HEIGHT], flags=pg.SCALED)
+        self.screen = pg.display.set_mode((0, 0), flags=pg.FULLSCREEN)
         pg.display.set_caption("Wheels on Wheels")
         self.clock = pg.time.Clock()
         self.write()
@@ -68,27 +69,29 @@ class Sim:
 
     def menu(self):
         self.mouse_pos()
-        self.text_version.type(self.screen, cf.WHITE)
-        self.text_choose.type(self.screen, cf.WHITE)
-        self.text_draw_own.type(self.screen, cf.WHITE)
+        self.text_version.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
+        self.text_choose.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
+        self.text_draw_own.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
         for t in self.text_choose_n:
-            t.type(self.screen, cf.WHITE)
+            t.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
         if self.choose_version is None:
             for t in self.text_choose_n:
                 if t.overlay(self.x, self.y):
-                    t.type(self.screen, cf.RED, fill=cf.PURPLE)
+                    t.type(self.screen, cf.RED, fill=cf.PURPLE, size=cf.TXT_BIG)
                     break
         elif self.choose_version == 'w0' and self.wait:
             self.screen.fill(cf.PURPLE)
-            self.text_version.type(self.screen, cf.WHITE, text='Draw your own')
+            self.text_version.type(self.screen, cf.WHITE,
+                                   text='Draw your own', size=cf.TXT_BIG)
             self.wheel.draw_path(self.screen, self.x, self.y)
-            self.text_done_draw.type(self.screen, cf.WHITE, size=30)
+            self.text_done_draw.type(self.screen, cf.WHITE, size=cf.TXT_SMALL)
         else:
             for i, t in enumerate(self.text_choose_n):
                 if self.choose_version == f'w{i}':
-                    t.type(self.screen, cf.GREEN, fill=cf.PURPLE)
+                    t.type(self.screen, cf.GREEN,
+                           fill=cf.PURPLE, size=cf.TXT_BIG)
                     break
-            self.text_press_n.type(self.screen, cf.WHITE)
+            self.text_press_n.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
 
     def write(self):
         self.text_version = Text(f'Choose your version', cf.SCREEN_WIDTH / 2,
@@ -131,16 +134,16 @@ class Sim:
         self.table.draw(self.screen, self.wheel.w, self.factor,
                         self.lines, self.choose_version)
         draw = ['start', 'stop']
-        self.text_version.type(self.screen, cf.WHITE, text=f'Press space to {draw[self.lines]} drawing')
-        self.text_restart.type(self.screen, cf.WHITE, size=30)
-        self.text_quit.type(self.screen, cf.WHITE, size=30)
+        self.text_version.type(self.screen, cf.WHITE, size=cf.TXT_BIG,
+                               text=f'Press space to {draw[self.lines]} drawing')
+        self.text_restart.type(self.screen, cf.WHITE, size=cf.TXT_SMALL, fill=cf.PURPLE)
+        self.text_quit.type(self.screen, cf.WHITE, size=cf.TXT_SMALL, fill=cf.PURPLE)
         if self.lines:
             self.factor += 0.05
 
     def game_loop(self):
         """The main loop that runs the simulation."""
         while 1:
-            # self.screen.fill(cf.PURPLE)
             if self.wait:
                 self.screen.fill(cf.PURPLE)
                 self.menu()

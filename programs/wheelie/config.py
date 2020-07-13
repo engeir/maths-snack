@@ -10,9 +10,12 @@ a = pg.display.set_mode((0, 0))
 # print(screeen.get_clip()[2])
 # a = pg.display.list_modes()
 # SCREEN_WIDTH, SCREEN_HEIGHT = a[0][0], a[0][1]
-SCREEN_WIDTH, SCREEN_HEIGHT = a.get_clip()[2], a.get_clip()[3]
+SCREEN_WIDTH, SCREEN_HEIGHT = int(a.get_clip()[2]), int(a.get_clip()[3])  # * .96)
 # SCREEN_WIDTH, SCREEN_HEIGHT = pg.display.Info().current_w, pg.display.Info().current_h
 FPS = 30
+
+TXT_BIG = int(SCREEN_WIDTH * .03)
+TXT_SMALL = int(SCREEN_WIDTH * .018)
 
 # Color
 BLACK = (0, 0, 0)
