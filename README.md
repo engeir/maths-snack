@@ -9,6 +9,7 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 * [Fractal Tree](programs/fractal_tree)
 * [Times Table](programs/x_table)
 * [Blocks colliding PI times](programs/pi_count)
+* [Draw with circles](programs/wheelie)
 
 :memo:
 * [Ant](scripts/ant.py)
@@ -47,6 +48,10 @@ Just scripts for different calculations, e.g. series or calculating the digits o
 
 #### [Dragon Curve](programs/dragon_curve)
 ![](lookbook/dragon_curve.png)
+
+#### [Draw with circles](programs/wheelie)
+![](lookbook/wheelie_drawZ.jpg)
+![](lookbook/wheelie_drawZ.gif)
 
 #### [Forest Fire](scripts/fire.py)
 ![](lookbook/fire.png)
