@@ -53,7 +53,7 @@ class Sim:
     def growing(self):
         if self.grow + cf.GROW_SPEED < 1.06:
             self.grow += cf.GROW_SPEED
-        if self.grow > 1.04 and self.generation < 11:
+        if self.grow > 1.04 and self.generation < 8:
             self.grow = cf.GROW_SPEED
             self.tree.structure(self.generation)
             self.generation += 1
