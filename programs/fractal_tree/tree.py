@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import pygame as pg
 import config as cf
@@ -7,17 +8,28 @@ class Tree:
     """Make a times table calculation."""
 
     def __init__(self):
-        self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - cf.SCREEN_HEIGHT * .1)]
-        self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - (cf.LENGTH + 100))]
-        # self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)]
-        # self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 - 1)]
         self.scale = 1
-        self.repr_nr = 3
-        self.twist_div = 20  # Sierpinski: 120
-        self.twist = np.pi * self.twist_div / 180
+        self.repr_nr = 9
+        twist_div = 20  # Sierpinski: 120
+        self.twist = np.pi * twist_div / 180
+        self.scaling = 0.5
         self.r = 173  # 139
         self.g = 255  # 69
         self.b = 47  # 19
+        # self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)]
+        # self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 - 1)]
+
+    @staticmethod
+    def o_mag(number):
+        return math.ceil(math.log(number, 10))
+
+    def set_vars(self, r, a, s):
+        self.repr_nr = r
+        self.twist = np.pi * a / 180
+        self.scaling = s / 10**self.o_mag(s)
+        self.length = 400  # self.scaling / 9
+        self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - cf.SCREEN_HEIGHT * .1)]
+        self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - (self.length + 10))]
 
     def draw(self, screen, generation, grow):
         # Nvm this, just colouring in
@@ -36,10 +48,7 @@ class Tree:
             pg.draw.line(screen, (self.r, self.g, self.b), start, stop, width)
 
     def structure(self, generation):
-        self.scale *= cf.SCALING
-        # if self.twist_div - cf.TWIST > 2.2:
-        #     self.twist_div -= cf.TWIST
-        #     self.twist = np.pi / self.twist_div
+        self.scale *= self.scaling
         branches = self.repr_nr**generation
         past_start = np.copy(self.last_gen_start)
         past_stop = np.copy(self.last_gen_stop)
@@ -51,17 +60,5 @@ class Tree:
             for child in range(self.repr_nr):
                 direction_ = direction * np.exp(self.twist * (child - (self.repr_nr / 2 - .5)) * 1j)
                 direction_ /= np.abs(direction_)
-                self.last_gen_stop[self.repr_nr * branch + child] = (past_stop[branch][0] + np.real(direction_) * cf.LENGTH * self.scale,
-                                                                     past_stop[branch][1] + np.imag(direction_) * cf.LENGTH * self.scale)
-            # direction_1 = direction * np.exp(self.twist * 1j)
-            # direction_2 = direction * np.exp(- self.twist * 1j)
-            # direction_3 = direction * np.exp(- self.twist * 0)
-            # direction_1 /= np.abs(direction_1)
-            # direction_2 /= np.abs(direction_2)
-            # direction_3 /= np.abs(direction_3)
-            # self.last_gen_stop[self.repr_nr * branch] = (past_stop[branch][0] + np.real(direction_1) * cf.LENGTH * self.scale,
-            #                                        past_stop[branch][1] + np.imag(direction_1) * cf.LENGTH * self.scale)
-            # self.last_gen_stop[self.repr_nr * branch + 1] = (past_stop[branch][0] + np.real(direction_2) * cf.LENGTH * self.scale,
-            #                                            past_stop[branch][1] + np.imag(direction_2) * cf.LENGTH * self.scale)
-            # self.last_gen_stop[self.repr_nr * branch + 2] = (past_stop[branch][0] + np.real(direction_3) * cf.LENGTH * self.scale,
-            #                                            past_stop[branch][1] + np.imag(direction_3) * cf.LENGTH * self.scale)
+                self.last_gen_stop[self.repr_nr * branch + child] = (past_stop[branch][0] + np.real(direction_) * self.length * self.scale,
+                                                                     past_stop[branch][1] + np.imag(direction_) * self.length * self.scale)
