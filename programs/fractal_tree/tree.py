@@ -16,8 +16,6 @@ class Tree:
         self.r = 173  # 139
         self.g = 255  # 69
         self.b = 47  # 19
-        # self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2)]
-        # self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT / 2 - 1)]
 
     @staticmethod
     def o_mag(number):
@@ -27,9 +25,14 @@ class Tree:
         self.repr_nr = r
         self.twist = np.pi * a / 180
         self.scaling = s / 10**self.o_mag(s)
-        self.length = 400  # self.scaling / 9
-        self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - cf.SCREEN_HEIGHT * .1)]
-        self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - (self.length + 10))]
+        if a < 90:
+            self.length = cf.SCREEN_HEIGHT * .75 / (np.sum([self.scaling**i for i in range(cf.GENS)]))
+            self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - cf.SCREEN_HEIGHT * .1)]
+            self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT - cf.SCREEN_HEIGHT * .1 - self.length)]
+        else:
+            self.length = cf.SCREEN_HEIGHT / (np.sum([self.scaling**i for i in range(cf.GENS)]))
+            self.last_gen_start = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT * .6)]
+            self.last_gen_stop = [(cf.SCREEN_WIDTH / 2, cf.SCREEN_HEIGHT * .6 - 1)]
 
     def draw(self, screen, generation, grow):
         # Nvm this, just colouring in

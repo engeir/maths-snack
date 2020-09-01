@@ -67,9 +67,8 @@ class Sim:
                         t.type(self.screen, cf.RED, fill=cf.PURPLE, size=cf.TXT_BIG)
                 break
         if self.reproduction[1] is not None and self.angle[1] is not None and self.scale[1] is not None and self.wait:
-            self.text_version.type(self.screen, cf.WHITE,
-                                   text='Draw your own', size=cf.TXT_BIG)
-            self.text_done_draw.type(self.screen, cf.WHITE, size=cf.TXT_SMALL)
+            self.text_version.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
+            # self.text_done_draw.type(self.screen, cf.WHITE, size=cf.TXT_SMALL)
             for t in self.text_choose_n:
                 t.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
             self.text_press_n.type(self.screen, cf.WHITE, size=cf.TXT_BIG)
@@ -94,8 +93,8 @@ class Sim:
                               self.text_scale]
         self.text_press_n = Text(f'Press "n".', cf.SCREEN_WIDTH / 2,
                                  cf.SCREEN_HEIGHT / 2 + cf.SCREEN_HEIGHT * .2)
-        self.text_done_draw = Text('Press "n" when\nyou are done', cf.SCREEN_WIDTH * .05,
-                                   cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .4, loc='l')
+        # self.text_done_draw = Text('Press "n" when\nyou are done', cf.SCREEN_WIDTH * .05,
+        #                            cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .4, loc='l')
         self.text_restart = Text('Restart: "r"', cf.SCREEN_WIDTH / 2 + cf.SCREEN_WIDTH * .48,
                                  cf.SCREEN_HEIGHT / 2 - cf.SCREEN_HEIGHT * .47, loc='r')
         self.text_quit = Text('Quit: "esc"', cf.SCREEN_WIDTH / 2 + cf.SCREEN_WIDTH * .36,
@@ -163,7 +162,7 @@ class Sim:
     def growing(self):
         if self.grow + cf.GROW_SPEED < 1.06:
             self.grow += cf.GROW_SPEED
-        if self.grow > 1.04 and self.generation < 8:
+        if self.grow > 1.04 and self.generation < cf.GENS:
             self.grow = cf.GROW_SPEED
             self.tree.structure(self.generation)
             self.generation += 1
@@ -185,6 +184,8 @@ class Sim:
             else:
                 self.growing()
                 self.tree.draw(self.screen, self.generation, self.grow)
+                self.text_restart.type(self.screen, cf.WHITE, size=cf.TXT_SMALL)
+                self.text_quit.type(self.screen, cf.WHITE, size=cf.TXT_SMALL)
             pg.display.update()
             self.clock.tick(cf.FPS)
             self.events()
