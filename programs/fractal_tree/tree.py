@@ -10,7 +10,7 @@ class Tree:
     def __init__(self):
         self.scale = 1
         self.repr_nr = 9
-        twist_div = 20  # Sierpinski: 120
+        twist_div = 20
         self.twist = np.pi * twist_div / 180
         self.scaling = 0.5
         self.r = 173  # 139
