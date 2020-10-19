@@ -3,7 +3,7 @@ import pygame as pg
 import config as cf
 from circle import Circle
 sys.path.append('../utils')
-from texts import Text
+from my_texts import Text
 
 
 class Sim:

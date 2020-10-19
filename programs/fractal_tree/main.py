@@ -4,7 +4,7 @@ import pygame as pg
 import config as cf
 from tree import Tree
 sys.path.append('../utils')
-from texts import Text
+from my_texts import Text
 
 
 class Sim:

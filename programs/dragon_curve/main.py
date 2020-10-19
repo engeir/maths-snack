@@ -4,7 +4,7 @@ import numpy as np
 import config as cf
 from dragon import Dragon
 sys.path.append('../utils')
-from texts import Text
+from my_texts import Text
 
 
 class Sim:
