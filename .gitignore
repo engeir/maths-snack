@@ -1,5 +1,7 @@
 __pycache__
 */__pycache__
+programs/*/__pycache__
+programs/*/DS_Store
 **/.pytest_cache/**
 .vscode
 .mypy_cache
