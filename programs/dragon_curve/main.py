@@ -12,8 +12,6 @@ class Sim:
 
     def __init__(self):
         pg.init()
-        # a = pg.display.list_modes()
-        # self.screen = pg.display.set_mode(a[0], pg.FULLSCREEN)
         self.screen = pg.display.set_mode((0, 0))
         pg.display.set_caption("Dragon Curve")
         self.clock = pg.time.Clock()
