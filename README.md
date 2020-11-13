@@ -1,5 +1,7 @@
 # Maths snacc :coffee:
 
+<img src="lookbook/life.gif" width="500">
+
 Just scripts for different calculations, e.g. series or calculating the digits of pi using a block bouncing off a wall and another block. In the pygame simulations, "r" resets the simulation and "esc" closes the program.
 
 ### Contents
