@@ -50,6 +50,7 @@ class TheGame:
         self.X, self.Y = np.meshgrid(x, y)
         self.Z = self.X + self.Y
         self.Z[:, :][:] = 0
+        self.arr = np.array([])
         if self.choose == 1:
             print('Diehard')
             self.Z[70:73, 70:78][:][:] = [
@@ -166,6 +167,7 @@ class TheGame:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
+                    np.savez('life_ts.npz', life=self.arr)
                     pg.quit()
                     quit()
                 if event.key == pg.K_SPACE:
@@ -174,6 +176,7 @@ class TheGame:
                 if event.key == pg.K_r:
                     self.setup()
             if event.type == pg.QUIT:
+                np.savez('life_ts.npz', life=self.arr)
                 pg.quit()
                 quit()
             if event.type == pg.MOUSEBUTTONUP and self.choose == 0:
@@ -195,6 +198,7 @@ class TheGame:
     def rules(self):
         """Implement the rules of Life.
         """
+        self.arr = np.r_[self.arr, np.sum(self.Z)]
         survival = np.copy(self.Z)
         nbrs_count = sum(np.roll(np.roll(self.Z[:, :][:], i, 0), j, 1)
                          for i in (-1, 0, 1) for j in (-1, 0, 1)
