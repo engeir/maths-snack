@@ -7,6 +7,18 @@ import numpy as np
 import collatz as co
 
 
+# === SETTINGS ===
+# Fav
+COLOR = (0.26, .4, .49)
+c = cycle(['#B2FF66', '#66FF66', '#FFB266',
+           '#FF9933', '#994C00', '#FF6666',
+           '#990000', '#FF9999', '#003300'])
+n_mx = int(1e4)
+# Other
+# COLOR = (0, 0, 0)
+# c = cycle([(i, i, i) for i in np.linspace(.3, 1, 9)])
+# n_mx = int(1e4)
+
 def rotating_line(series):
     l = np.asarray([[0, 0], [0, 1]])
     a = .05
@@ -24,18 +36,14 @@ def rotating_line(series):
     return l
 
 
-c = cycle(['#B2FF66', '#66FF66', '#FFB266',
-           '#FF9933', '#994C00', '#FF6666',
-           '#990000', '#FF9999', '#003300'])
 # pdffig = PdfPages('collatz_sea_weed_5.pdf')
 f = plt.figure()
 sub = f.add_subplot(1, 1, 1)
-for n in range(1, int(1e4)):
+for n in range(1, n_mx):
     c_series = co.collatz(n, list_out=True)
     line = rotating_line(c_series)
-    plt.plot(line[0, 3:], line[1, 3:], next(c), alpha=.2, linewidth=3)
+    plt.plot(line[0, 3:], line[1, 3:], color=next(c), alpha=.2, linewidth=3)
 plt.axis('off')
-COLOR = (0.26, .4, .49)
 sub.set_facecolor(COLOR)
 f.patch.set_facecolor(COLOR)
 plt.tight_layout()
