@@ -36,7 +36,7 @@ def rotating_line(series):
     return l
 
 
-# pdffig = PdfPages('collatz_sea_weed_5.pdf')
+pdffig = PdfPages('../lookbook/collatz_sea_weed_bw.pdf')
 f = plt.figure()
 sub = f.add_subplot(1, 1, 1)
 for n in range(1, n_mx):
@@ -48,5 +48,5 @@ sub.set_facecolor(COLOR)
 f.patch.set_facecolor(COLOR)
 plt.tight_layout()
 # plt.savefig('collatz_sea_weed_trans.png', bbox_inches='tight', format='png', dpi=600)
-# pdffig.close()
+pdffig.close()
 plt.show()
