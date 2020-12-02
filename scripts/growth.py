@@ -4,8 +4,8 @@ from matplotlib.animation import FuncAnimation
 import random
 
 
-rate_change = 0.001
-# rate_change = 0.00001
+# rate_change = 0.001
+rate_change = 0.00001
 
 def final_pop(r):
     n = [0.5]
@@ -15,28 +15,45 @@ def final_pop(r):
             n.pop(0)
     return n[random.randint(0, 9)]
 
-def chaos(r_max):
-    m = []
-    rate = 0
-    while rate < r_max:
-        m.append(final_pop(rate))
-        rate += rate_change
-    return m
+def final_put(r):
+    n = [0.5]
+    for _ in range(40):
+        n.append(r * n[-1] * (1 - n[-1]))
+        if len(n) > 10:
+            n.pop(0)
+    return n
 
-chaotic = chaos(4.1)
-x_min = 0  # - len(chaotic) / 10
-x_max = len(chaotic) * rate_change  # + len(chaotic) / 10
+def chaos(r_max):
+    r = []
+    m = []
+    rate = 2.8
+    while rate < r_max:
+        if rate < 3.4:
+            r = np.r_[r, rate]
+            m = np.r_[m, final_pop(rate)]
+            # m.append(final_pop(rate))
+        else:
+            r = np.r_[r, [rate for _ in range(10)]]
+            m = np.r_[m, final_put(rate)]
+            # m.append(final_put(rate))
+        rate += rate_change
+    return list(r),  list(m)
+
+rates, chaotic = chaos(4.)
+x_min = rates[0]  # - len(chaotic) / 10
+x_max = rates[-1]  # len(chaotic) * rate_change  # + len(chaotic) / 10
 y_min = 0  # min(chaotic) - max(chaotic) / 10
 y_max = 1  # max(chaotic) + max(chaotic) / 10
 data = np.zeros((len(chaotic), 2))
-data[:, 0] = [x * rate_change for x in range(len(chaotic))]
+data[:, 0] = rates  # [x * rate_change for x in range(len(chaotic))]
 data[:, 1] = chaotic
 
 
 if rate_change < 0.001:
     plt.figure()
-    plt.plot([x * rate_change for x in range(len(chaotic))],
-            chaotic, 'o', markersize=1)
+    plt.plot(rates, chaotic, 'o', markersize=1)
+    # plt.plot([x * rate_change for x in range(len(chaotic))],
+    #         chaotic, 'o', markersize=1)
     plt.show()
 else:
     fig, ax = plt.subplots()
