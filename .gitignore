@@ -4,6 +4,8 @@ programs/*/__pycache__
 programs/*/DS_Store
 **/.pytest_cache/**
 .vscode
+.vim
+.venv
 .mypy_cache
 **/.mypy_cache/3.7
 
