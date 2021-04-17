@@ -16,6 +16,7 @@ PyQt5 = "^5.15.4"
 pandas = "^1.2.4"
 scipy = "^1.6.2"
 sympy = "^1.8"
+numba = "^0.53.1"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^2.12.0"

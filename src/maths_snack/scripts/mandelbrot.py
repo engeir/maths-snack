@@ -1,10 +1,12 @@
+import time
+
 import matplotlib.pyplot as plt
+import numba as nb
 import numpy as np
 import pylab as pyl
-from numba import jit
 
 
-@jit
+@nb.njit
 def mandelbrot(creal, cimag, maxiter):
     real = creal
     imag = cimag
@@ -18,18 +20,20 @@ def mandelbrot(creal, cimag, maxiter):
     return np.NaN
 
 
-@jit
+@nb.njit(parallel=True)
 def mandelbrot_set4(xmin, xmax, ymin, ymax, width, height, maxiter):
     r1 = np.linspace(xmin, xmax, width)
     r2 = np.linspace(ymin, ymax, height)
     n3 = np.empty((height, width))
-    for i in range(width):
-        for j in range(height):
+    for i in nb.prange(width):
+        for j in nb.prange(height):
             n3[j, i] = np.log(mandelbrot(r1[i], r2[j], maxiter))
     return (r2, r1, n3)
 
 
+t0 = time.perf_counter()
 Y, X, Z = mandelbrot_set4(-2, 0.5, -1, 1, 5000, 5000, 1000)
+print(time.perf_counter() - t0)
 
 plt.imshow(
     Z,

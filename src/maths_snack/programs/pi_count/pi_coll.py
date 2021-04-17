@@ -24,7 +24,9 @@ class TheGame:
         pg.display.set_caption("Name")
         self.clock = pg.time.Clock()
         self.count = 0
-        self.click = pg.mixer.Sound("Click2-Sebastian-759472264.wav")
+        self.click = pg.mixer.Sound(
+            "src/maths_snack/programs/pi_count/Click2-Sebastian-759472264.wav"
+        )
         self.setup()
 
     def setup(self):
