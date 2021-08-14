@@ -7,24 +7,24 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 # === SETTINGS ===
 # Fav
-COLOR = (0.26, 0.4, 0.49)
-c = cycle(
-    [
-        "#B2FF66",
-        "#66FF66",
-        "#FFB266",
-        "#FF9933",
-        "#994C00",
-        "#FF6666",
-        "#990000",
-        "#FF9999",
-        "#003300",
-    ]
-)
+# COLOR = (0.26, 0.4, 0.49)
+# c = cycle(
+#     [
+#         "#B2FF66",
+#         "#66FF66",
+#         "#FFB266",
+#         "#FF9933",
+#         "#994C00",
+#         "#FF6666",
+#         "#990000",
+#         "#FF9999",
+#         "#003300",
+#     ]
+# )
 n_mx = int(1e4)
 # Other
-# COLOR = (0, 0, 0)
-# c = cycle([(i, i, i) for i in np.linspace(.3, 1, 9)])
+COLOR = (0, 0, 0)
+c = cycle([(i, i, i) for i in np.linspace(.3, 1, 9)])
 # n_mx = int(1e4)
 
 
@@ -45,7 +45,7 @@ def rotating_line(series):
     return ell
 
 
-pdffig = PdfPages("../lookbook/collatz_sea_weed_bw.pdf")
+pdffig = PdfPages("lookbook/collatz_sea_weed_bw.pdf")
 f = plt.figure()
 sub = f.add_subplot(1, 1, 1)
 for n in range(1, n_mx):
@@ -56,6 +56,8 @@ plt.axis("off")
 sub.set_facecolor(COLOR)
 f.patch.set_facecolor(COLOR)
 plt.tight_layout()
-# plt.savefig('collatz_sea_weed_trans.png', bbox_inches='tight', format='png', dpi=600)
+plt.savefig('collatz_sea_weed_bw.png', bbox_inches='tight', format='png', dpi=600)
+plt.savefig('collatz_sea_weed_bw.jpg', bbox_inches='tight', format='jpg', dpi=600)
+plt.savefig('collatz_sea_weed_bw.eps', bbox_inches='tight', format='eps', dpi=600)
 pdffig.close()
 plt.show()
