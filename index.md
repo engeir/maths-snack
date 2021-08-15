@@ -1,37 +1,89 @@
-## Welcome to GitHub Pages
+# Maths snacc :coffee:
 
-You can use the [editor on GitHub](https://github.com/engeir/maths-snack/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<img src="lookbook/output.gif" width="350" align="right">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Just scripts for different calculations, e.g. series or calculating the digits of pi using a block bouncing off a wall and another block. In the pygame simulations, "r" resets the simulation and "esc" closes the program.
 
-### Markdown
+### Contents
+------------
+:file_folder:
+* [Dragon Curve](src/maths_snack/programs/dragon_curve)
+* [Fractal Tree](src/maths_snack/programs/fractal_tree)
+* [Times Table](src/maths_snack/programs/x_table)
+* [Blocks colliding PI times](src/maths_snack/programs/pi_count)
+* [Draw with circles](src/maths_snack/programs/wheelie)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+:memo:
+* [Ant](src/maths_snack/scripts/ant.py)
+* [The Barnsley Fern](src/maths_snack/scripts/barnsley_fern.py)
+* [Chaotic Ribbon](src/maths_snack/scripts/chaotic_ribbon.py) - Number series from [OEIS](https://oeis.org/A055748)
+* [The Collatz conjecture](src/maths_snack/scripts/collatz.py)
+* [Continued fraction](src/maths_snack/scripts/continued_frac.py)
+* [The Double Pendulum](src/maths_snack/scripts/double_pend.py)
+* [Forest Fire](src/maths_snack/scripts/fire.py) - Number series from [OEIS](https://oeis.org/A229037)
+* [Fly Straight](src/maths_snack/scripts/fly_straight.py) - Number series from [OEIS](https://oeis.org/A133058)
+* [Gaussian Elimination](src/maths_snack/scripts/gauss_elim.py)
+* [Golden Ratio generator](src/maths_snack/scripts/golden.py)
+* [Graham Scan](src/maths_snack/scripts/graham_scan.py) - A gift wrapping tool
+* [Chaos in population growth](src/maths_snack/scripts/growth.py)
+* [Conway's Game of Life](src/maths_snack/scripts/life.py)
+* [The Mandelbrot Set](src/maths_snack/scripts/mandelbrot.py)
+* [Monte Carlo approximation](src/maths_snack/scripts/monte_carlo.py)
+* [Parallelogram](src/maths_snack/scripts/parallelogram.py) - Number series from [OEIS](https://oeis.org/A265326)
+* [Pyramidal numbers](src/maths_snack/scripts/pyramidal_number.py) - Making pyramids and polygons of cannon balls
+* [The Quicksort algorithm](src/maths_snack/scripts/quicksort.py)
+* [Sacks Spiral](src/maths_snack/scripts/sack_spiral.py)
+* [Snowy Alps](src/maths_snack/scripts/snowy.py) - Number series from [OEIS](https://oeis.org/A279125)
+* [van Eck](src/maths_snack/scripts/van_eck.py) - Number series from [OEIS](https://oeis.org/A181391)
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+### Examples
+------------
+#### [The Barnsley Fern](src/maths_snack/scripts/barnsley_fern.py)
+![](lookbook/barnsley_fern.png)
 
-- Bulleted
-- List
+#### [Chaotic Ribbon](src/maths_snack/scripts/chaotic_ribbon.py)
+![](lookbook/chaotic_ribbon.png)
 
-1. Numbered
-2. List
+#### [Collatz algorithm](src/maths_snack/scripts/collatz_test.py)
+![](lookbook/collatz_sea_weed.png)
 
-**Bold** and _Italic_ and `Code` text
+#### [Dragon Curve](src/maths_snack/programs/dragon_curve)
+![](lookbook/dragon_curve.png)
 
-[Link](url) and ![Image](src)
-```
+#### [Draw with circles](src/maths_snack/programs/wheelie)
+![](lookbook/wheelie_drawZ.jpg)
+![](lookbook/wheelie_drawZ.gif)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### [Forest Fire](src/maths_snack/scripts/fire.py)
+![](lookbook/fire.png)
 
-### Jekyll Themes
+#### [Fly Straight](src/maths_snack/scripts/fly_straight.py)
+![](lookbook/fly_straight.gif)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/engeir/maths-snack/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+#### [Fractal Tree](src/maths_snack/programs/fractal_tree)
+![](lookbook/fractal_tree.png)
+![](lookbook/fractal_tree.gif)
 
-### Support or Contact
+#### [Graham Scan](src/maths_snack/scripts/graham_scan.py)
+![](lookbook/graham_scan.png)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#### [Chaos in population growth](src/maths_snack/scripts/growth.py)
+![](lookbook/growth.gif)
+
+#### [Parallelogram](src/maths_snack/scripts/parallelogram.py)
+![](lookbook/parallelogram.png)
+
+#### [Count Pi with colliding blocks](src/maths_snack/programs/pi_count)
+![](lookbook/pi_collide_count.png)
+![](lookbook/pi_count.gif)
+
+#### [Sacks Spiral](src/maths_snack/scripts/sack_spiral.py)
+![](lookbook/sack_spiral.png)
+
+#### [Snowy Alps](src/maths_snack/scripts/snowy.py)
+![](lookbook/snowy_hills.png)
+
+#### [Times Table](src/maths_snack/programs/x_table)
+![](lookbook/x_table.png)
+![](lookbook/x_table_low.gif)
