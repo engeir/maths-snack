@@ -8,13 +8,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # === SETTINGS ===
 # Fav
 # COLOR = (0.26, 0.4, 0.49)
-# c = cycle(["#B2FF66", "#66FF66", "#FFB266", "#FF9933", "#994C00", "#FF6666", "#990000", "#FF9999", "#003300"])
-c = cycle(["#e27d60", "#85dcb0", "#e8a87c", "#c38d9e", "#41b3a3"])
-# c = cycle(["#242582", "#553d67", "#f64c72", "#99738e", "#2f2fa2"])
-# c = cycle(["#8d8741", "#659dbd", "#daad86", "#bc986a", "#fbeec1"])
-# c = cycle(["#05386b", "#379683", "#5cdb95", "#8ee4af", "#edf5e1"])
-# c = cycle(["#fc4445", "#3feee6", "#55bcc9", "#97caef", "#cafafe"])
-# c = cycle(["#8ee4af", "#edf5e1", "#5cdb95", "#907163", "#379683"])
+c = cycle(["#B2FF66", "#66FF66", "#FFB266", "#FF9933", "#994C00", "#FF6666", "#990000", "#FF9999", "#003300"])
 # Other
 COLOR = (0, 0, 0)
 # c = cycle([(i, i, i) for i in np.linspace(.3, 1, 9)])
