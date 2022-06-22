@@ -10,7 +10,7 @@ maths-snack = "programs.wheelie.main:main"
 [tool.poetry.dependencies]
 python = ">=3.9,<3.10"
 matplotlib = "^3.4.1"
-numpy = "^1.20.2"
+numpy = "^1.22.0"
 scipy = "^1.6.2"
 sympy = "^1.8"
 numba = "^0.53.1"
